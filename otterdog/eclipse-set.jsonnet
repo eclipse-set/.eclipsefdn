@@ -46,7 +46,7 @@ orgs.newOrg('eclipse-set') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          restricts_pushes: true
+          restricts_pushes: true,
           push_restrictions: [ '@eclipse-set-bot' ],
           required_approving_review_count: null,
         }
