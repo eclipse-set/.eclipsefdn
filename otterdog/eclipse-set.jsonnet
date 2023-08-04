@@ -48,7 +48,7 @@ orgs.newOrg('eclipse-set') {
         orgs.newBranchProtectionRule('main') {
           restricts_pushes: true,
           push_restrictions: [ '@eclipse-set-bot' ],
-          required_approving_review_count: null,
+          required_approving_review_count: 0,
         }
       ]
     },
