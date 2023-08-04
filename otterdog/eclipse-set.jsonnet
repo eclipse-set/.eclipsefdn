@@ -45,8 +45,7 @@ orgs.newOrg('eclipse-set') {
       has_wiki: false,
       web_commit_signoff_required: false,
       branch_protection_rules: [
-        {
-          pattern: 'main',
+        orgs.newBranchProtectionRule('main') {
           requires_pull_request: true,
           allows_deletions: false,
           allows_force_pushes: false,
