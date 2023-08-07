@@ -2,7 +2,6 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 local custom_branch_protection_rule(pattern) = 
   orgs.newBranchProtectionRule(pattern) {
-    bypass_pull_request_allowances: [ '@eclipse-set-bot' ],
     required_approving_review_count: 0,
   };
 
