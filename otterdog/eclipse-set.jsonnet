@@ -1,5 +1,9 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
-
+local custom_branch_protection_rule(pattern) = orgs.newBranchProtectionRule(pattern) {
+                                restricts_pushes: true,
+                                push_restrictions: [ '@eclipse-set-bot' ],
+                                required_approving_review_count: 0,
+                              };
 orgs.newOrg('eclipse-set') {
   settings+: {
     default_repository_permission: "none",
@@ -21,6 +25,9 @@ orgs.newOrg('eclipse-set') {
       has_issues: false,
       has_wiki: false,
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        custom_branch_protection_rule('main'),
+      ],
     },
     orgs.newRepo('build') {
       allow_merge_commit: false,
@@ -29,6 +36,9 @@ orgs.newOrg('eclipse-set') {
       has_issues: false,
       has_wiki: false,
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        custom_branch_protection_rule('main'),
+      ],      
     },
     orgs.newRepo('model') {
       allow_merge_commit: false,
@@ -37,6 +47,9 @@ orgs.newOrg('eclipse-set') {
       has_issues: false,
       has_wiki: false,
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        custom_branch_protection_rule('main'),
+      ],
     },
     orgs.newRepo('set') {
       allow_merge_commit: false,
@@ -44,6 +57,9 @@ orgs.newOrg('eclipse-set') {
       delete_branch_on_merge: true,
       has_wiki: false,
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        custom_branch_protection_rule('main'),
+      ]
     },
     orgs.newRepo('toolboxmodel') {
       allow_merge_commit: false,
@@ -52,6 +68,9 @@ orgs.newOrg('eclipse-set') {
       has_issues: false,
       has_wiki: false,
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        custom_branch_protection_rule('main'),
+      ],      
     },
   ],
 }
