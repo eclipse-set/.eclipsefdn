@@ -1,9 +1,12 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
-local custom_branch_protection_rule(pattern) = orgs.newBranchProtectionRule(pattern) {
-                                restricts_pushes: true,
-                                push_restrictions: [ '@eclipse-set-bot' ],
-                                required_approving_review_count: 0,
-                              };
+
+local custom_branch_protection_rule(pattern) = 
+  orgs.newBranchProtectionRule(pattern) {
+    restricts_pushes: true,
+    push_restrictions: [ '@eclipse-set-bot' ],
+    required_approving_review_count: 0,
+  };
+
 orgs.newOrg('eclipse-set') {
   settings+: {
     default_repository_permission: "none",
