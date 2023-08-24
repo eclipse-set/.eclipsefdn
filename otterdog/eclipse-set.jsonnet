@@ -22,6 +22,12 @@ orgs.newOrg('eclipse-set') {
     orgs.newOrgSecret('GITLAB_API_TOKEN') {
       value: "pass:bots/technology.set/gitlab.eclipse.org/api-token",
     },
+    orgs.newOrgSecret('GITHUB_BOT_USERNAME') {
+      value: "pass:bots/technology.set/github.com/username",
+    },
+    orgs.newOrgSecret('GITHUB_BOT_TOKEN') {
+      value: "pass:bots/technology.set/github.com/api-token",
+    },
   ],
   _repositories+:: [
     orgs.newRepo('browser') {
@@ -68,11 +74,6 @@ orgs.newOrg('eclipse-set') {
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
         custom_branch_protection_rule('release/*'),
-      ],
-      secrets+: [
-        orgs.newRepoSecret('ACTIONS_RUNTIME_TOKEN') {
-          value: "********",
-        },
       ],
     },
     orgs.newRepo('toolboxmodel') {
