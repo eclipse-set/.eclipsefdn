@@ -22,10 +22,10 @@ orgs.newOrg('eclipse-set') {
     orgs.newOrgSecret('GITLAB_API_TOKEN') {
       value: "pass:bots/technology.set/gitlab.eclipse.org/api-token",
     },
-    orgs.newOrgSecret('GITHUB_BOT_USERNAME') {
+    orgs.newOrgSecret('GH_BOT_USERNAME') {
       value: "pass:bots/technology.set/github.com/username",
     },
-    orgs.newOrgSecret('GITHUB_BOT_TOKEN') {
+    orgs.newOrgSecret('GH_BOT_TOKEN') {
       value: "pass:bots/technology.set/github.com/api-token",
     },
   ],
