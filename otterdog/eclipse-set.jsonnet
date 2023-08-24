@@ -39,6 +39,7 @@ orgs.newOrg('eclipse-set') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
+        custom_branch_protection_rule('release/*'),
       ],
     },
     orgs.newRepo('build') {
@@ -61,6 +62,7 @@ orgs.newOrg('eclipse-set') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
+        custom_branch_protection_rule('release/*'),
       ],
     },
     orgs.newRepo('set') {
@@ -71,6 +73,7 @@ orgs.newOrg('eclipse-set') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
+        custom_branch_protection_rule('release/*'),
       ],
     },
     orgs.newRepo('toolboxmodel') {
@@ -82,6 +85,7 @@ orgs.newOrg('eclipse-set') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
+        custom_branch_protection_rule('release/*'),
       ],      
     },
   ],
