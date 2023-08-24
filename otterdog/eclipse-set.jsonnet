@@ -65,7 +65,12 @@ orgs.newOrg('eclipse-set') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
-      ]
+      ],
+      secrets+: [
+        orgs.newRepoSecret('ACTIONS_RUNTIME_TOKEN') {
+          value: "********",
+        },
+      ],
     },
     orgs.newRepo('toolboxmodel') {
       allow_merge_commit: false,
