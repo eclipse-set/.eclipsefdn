@@ -18,6 +18,11 @@ orgs.newOrg('eclipse-set') {
     readers_can_create_discussions: true,
     web_commit_signoff_required: false,
   },
+  secrets+: [
+    orgs.newOrgSecret('GITLAB_API_TOKEN') {
+      value: "pass:bots/technology.set/gitlab.eclipse.org/api-token",
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('browser') {
       allow_merge_commit: false,
