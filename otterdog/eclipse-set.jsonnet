@@ -14,6 +14,9 @@ orgs.newOrg('eclipse-set') {
     packages_containers_internal: false,
     readers_can_create_discussions: true,
     web_commit_signoff_required: false,
+    workflows+: {
+      actions_can_approve_pull_request_reviews: false,
+    },
   },
   secrets+: [
     orgs.newOrgSecret('GITLAB_API_TOKEN') {
