@@ -19,21 +19,19 @@ orgs.newOrg('eclipse-set') {
     },
   },
   secrets+: [
-    orgs.newOrgSecret('GITLAB_API_TOKEN') {
-      value: "pass:bots/technology.set/gitlab.eclipse.org/api-token",
+    orgs.newOrgSecret('GH_BOT_TOKEN') {
+      value: "pass:bots/technology.set/github.com/api-token",
     },
     orgs.newOrgSecret('GH_BOT_USERNAME') {
       value: "pass:bots/technology.set/github.com/username",
     },
-    orgs.newOrgSecret('GH_BOT_TOKEN') {
-      value: "pass:bots/technology.set/github.com/api-token",
+    orgs.newOrgSecret('GITLAB_API_TOKEN') {
+      value: "pass:bots/technology.set/gitlab.eclipse.org/api-token",
     },
   ],
   _repositories+:: [
     orgs.newRepo('browser') {
-      allow_merge_commit: false,
       allow_update_branch: false,
-      delete_branch_on_merge: true,
       has_issues: false,
       has_wiki: false,
       web_commit_signoff_required: false,
@@ -43,9 +41,7 @@ orgs.newOrg('eclipse-set') {
       ],
     },
     orgs.newRepo('build') {
-      allow_merge_commit: false,
       allow_update_branch: false,
-      delete_branch_on_merge: true,
       has_issues: false,
       has_wiki: false,
       web_commit_signoff_required: false,
@@ -54,9 +50,7 @@ orgs.newOrg('eclipse-set') {
       ],      
     },
     orgs.newRepo('model') {
-      allow_merge_commit: false,
       allow_update_branch: false,
-      delete_branch_on_merge: true,
       has_issues: false,
       has_wiki: false,
       web_commit_signoff_required: false,
@@ -66,9 +60,7 @@ orgs.newOrg('eclipse-set') {
       ],
     },
     orgs.newRepo('set') {
-      allow_merge_commit: false,
       allow_update_branch: false,
-      delete_branch_on_merge: true,
       has_wiki: false,
       web_commit_signoff_required: false,
       branch_protection_rules: [
@@ -77,9 +69,7 @@ orgs.newOrg('eclipse-set') {
       ],
     },
     orgs.newRepo('toolboxmodel') {
-      allow_merge_commit: false,
       allow_update_branch: false,
-      delete_branch_on_merge: true,
       has_issues: false,
       has_wiki: false,
       web_commit_signoff_required: false,
