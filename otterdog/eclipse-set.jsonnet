@@ -7,7 +7,6 @@ local custom_branch_protection_rule(pattern) =
 
 orgs.newOrg('eclipse-set') {
   settings+: {
-    default_repository_permission: "none",
     dependabot_security_updates_enabled_for_new_repositories: false,
     description: "",
     name: "Eclipse SET",
@@ -35,6 +34,9 @@ orgs.newOrg('eclipse-set') {
       has_issues: false,
       has_wiki: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
         custom_branch_protection_rule('release/*'),
@@ -45,6 +47,9 @@ orgs.newOrg('eclipse-set') {
       has_issues: false,
       has_wiki: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
       ],      
@@ -54,6 +59,9 @@ orgs.newOrg('eclipse-set') {
       has_issues: false,
       has_wiki: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
         custom_branch_protection_rule('release/*'),
@@ -63,6 +71,9 @@ orgs.newOrg('eclipse-set') {
       allow_update_branch: false,
       has_wiki: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
         custom_branch_protection_rule('release/*'),
@@ -73,6 +84,9 @@ orgs.newOrg('eclipse-set') {
       has_issues: false,
       has_wiki: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
         custom_branch_protection_rule('release/*'),
