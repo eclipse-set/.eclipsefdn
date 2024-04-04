@@ -11,7 +11,6 @@ orgs.newOrg('eclipse-set') {
     description: "",
     name: "Eclipse SET",
     packages_containers_internal: false,
-    readers_can_create_discussions: true,
     web_commit_signoff_required: false,
     workflows+: {
       actions_can_approve_pull_request_reviews: false,
