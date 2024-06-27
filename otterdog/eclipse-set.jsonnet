@@ -7,7 +7,6 @@ local custom_branch_protection_rule(pattern) =
 
 orgs.newOrg('eclipse-set') {
   settings+: {
-    dependabot_security_updates_enabled_for_new_repositories: false,
     description: "",
     name: "Eclipse SET",
     packages_containers_internal: false,
