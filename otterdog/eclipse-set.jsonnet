@@ -5,7 +5,7 @@ local custom_branch_protection_rule(pattern) =
     required_approving_review_count: 0,
   };
 
-orgs.newOrg('eclipse-set') {
+orgs.newOrg('technology.set', 'eclipse-set') {
   settings+: {
     description: "",
     name: "Eclipse SET",
