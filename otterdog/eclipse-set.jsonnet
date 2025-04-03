@@ -36,8 +36,7 @@ orgs.newOrg('technology.set', 'eclipse-set') {
         actions_can_approve_pull_request_reviews: false,
       },
       branch_protection_rules: [
-        custom_branch_protection_rule('main'),
-        custom_branch_protection_rule('release/*'),
+        custom_branch_protection_rule('main')
       ],
     },
     orgs.newRepo('build') {
@@ -61,8 +60,7 @@ orgs.newOrg('technology.set', 'eclipse-set') {
         actions_can_approve_pull_request_reviews: false,
       },
       branch_protection_rules: [
-        custom_branch_protection_rule('main'),
-        custom_branch_protection_rule('release/*'),
+        custom_branch_protection_rule('main')
       ],
     },
     orgs.newRepo('set') {
@@ -73,8 +71,7 @@ orgs.newOrg('technology.set', 'eclipse-set') {
         actions_can_approve_pull_request_reviews: false,
       },
       branch_protection_rules: [
-        custom_branch_protection_rule('main'),
-        custom_branch_protection_rule('release/*'),
+        custom_branch_protection_rule('main')
       ],
     },
     orgs.newRepo('toolboxmodel') {
@@ -86,8 +83,7 @@ orgs.newOrg('technology.set', 'eclipse-set') {
         actions_can_approve_pull_request_reviews: false,
       },
       branch_protection_rules: [
-        custom_branch_protection_rule('main'),
-        custom_branch_protection_rule('release/*'),
+        custom_branch_protection_rule('main')
       ],      
     },
   ],
