@@ -5,6 +5,14 @@ local custom_branch_protection_rule(pattern) =
     required_approving_review_count: 0,
   };
 
+local release_branch_protection_rule() = 
+  orgs.newBranchProtectionRule('release/*') {
+    restricts_pushes: true,
+    blocks_creations: true,
+    push_restrictions: ['@eclipse-set-bot'],
+    required_approving_review_count: 0,
+  };
+
 orgs.newOrg('technology.set', 'eclipse-set') {
   settings+: {
     description: "",
@@ -37,7 +45,7 @@ orgs.newOrg('technology.set', 'eclipse-set') {
       },
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
-        custom_branch_protection_rule('release/*'),
+        release_branch_protection_rule(),
       ],
     },
     orgs.newRepo('build') {
@@ -62,7 +70,7 @@ orgs.newOrg('technology.set', 'eclipse-set') {
       },
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
-        custom_branch_protection_rule('release/*'),
+        release_branch_protection_rule(),
       ],
     },
     orgs.newRepo('set') {
@@ -74,7 +82,7 @@ orgs.newOrg('technology.set', 'eclipse-set') {
       },
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
-        custom_branch_protection_rule('release/*'),
+        release_branch_protection_rule(),
       ],
     },
     orgs.newRepo('toolboxmodel') {
@@ -87,7 +95,7 @@ orgs.newOrg('technology.set', 'eclipse-set') {
       },
       branch_protection_rules: [
         custom_branch_protection_rule('main'),
-        custom_branch_protection_rule('release/*'),
+        release_branch_protection_rule(),
       ],      
     },
   ],
