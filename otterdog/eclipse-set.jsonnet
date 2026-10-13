@@ -87,6 +87,20 @@ orgs.newOrg('technology.set', 'eclipse-set') {
       has_issues: false,
       has_wiki: false,
       web_commit_signoff_required: false,
+      archived: true,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+      branch_protection_rules: [
+        custom_branch_protection_rule('main'),
+        release_branch_protection_rule(),
+      ],      
+    },
+    orgs.newRepo('plazlst') {
+      allow_update_branch: false,
+      has_issues: false,
+      has_wiki: false,
+      web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
